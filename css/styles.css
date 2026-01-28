@@ -2246,9 +2246,11 @@ p {
 .packing-card__icon {
     width: 64px;
     height: 64px;
-    border-radius: 12px;
-    object-fit: cover;
+    object-fit: contain;
     flex-shrink: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
 }
 
 .packing-card__text {
