@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initHeroSlider();
     initAdvantagesSlider();
+    initPackingSlider();
     initFaqAccordion();
     initContactWidget();
     initSmoothScroll();
@@ -254,6 +255,143 @@ function initAdvantagesSlider() {
     currentIndex = originalCards.length; // Start from middle for infinite scroll
     updateSlider(false);
     startAutoScroll();
+}
+
+/* ========== PACKING SLIDER (NO DUPLICATES) ========== */
+function initPackingSlider() {
+    const slider = document.getElementById('packing-slider');
+    const track = slider?.querySelector('.packing-track');
+    const prevBtn = document.querySelector('.packing-arrow--prev');
+    const nextBtn = document.querySelector('.packing-arrow--next');
+
+    if (!slider || !track) return;
+
+    const cards = track.querySelectorAll('.packing-card');
+    if (cards.length === 0) return;
+
+    let currentIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    let translateX = 0;
+    let currentTranslate = 0;
+
+    // Calculate visible cards based on viewport
+    function getVisibleCards() {
+        const viewportWidth = window.innerWidth;
+        if (viewportWidth <= 640) return 1;
+        if (viewportWidth <= 1024) return 2;
+        return 3;
+    }
+
+    // Calculate card width including gap
+    function getCardWidth() {
+        const card = cards[0];
+        const gap = 24;
+        return card.offsetWidth + gap;
+    }
+
+    // Get max index (prevent scrolling past last cards)
+    function getMaxIndex() {
+        const visibleCards = getVisibleCards();
+        return Math.max(0, cards.length - visibleCards);
+    }
+
+    // Update slider position
+    function updateSlider(animate = true) {
+        const cardWidth = getCardWidth();
+        track.style.transition = animate ? 'transform 0.5s ease-out' : 'none';
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        currentTranslate = -currentIndex * cardWidth;
+        updateButtons();
+    }
+
+    // Update button states
+    function updateButtons() {
+        const maxIndex = getMaxIndex();
+        prevBtn.disabled = currentIndex <= 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
+
+    // Navigation
+    function nextSlide() {
+        const maxIndex = getMaxIndex();
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateSlider();
+        }
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
+
+    // Button events
+    prevBtn?.addEventListener('click', prevSlide);
+    nextBtn?.addEventListener('click', nextSlide);
+
+    // Drag functionality
+    function handleDragStart(e) {
+        isDragging = true;
+        startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        translateX = 0;
+        slider.style.cursor = 'grabbing';
+        track.style.transition = 'none';
+    }
+
+    function handleDragMove(e) {
+        if (!isDragging) return;
+        const currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+        translateX = currentX - startX;
+        track.style.transform = `translateX(${currentTranslate + translateX}px)`;
+    }
+
+    function handleDragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        slider.style.cursor = 'grab';
+
+        const cardWidth = getCardWidth();
+        const maxIndex = getMaxIndex();
+
+        if (translateX > 50 && currentIndex > 0) {
+            currentIndex--;
+        } else if (translateX < -50 && currentIndex < maxIndex) {
+            currentIndex++;
+        }
+
+        updateSlider();
+    }
+
+    // Mouse events
+    slider.addEventListener('mousedown', handleDragStart);
+    slider.addEventListener('mousemove', handleDragMove);
+    slider.addEventListener('mouseup', handleDragEnd);
+    slider.addEventListener('mouseleave', handleDragEnd);
+
+    // Touch events
+    slider.addEventListener('touchstart', handleDragStart, { passive: true });
+    slider.addEventListener('touchmove', handleDragMove, { passive: true });
+    slider.addEventListener('touchend', handleDragEnd);
+
+    // Resize handler
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            // Ensure current index is valid after resize
+            const maxIndex = getMaxIndex();
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            updateSlider(false);
+        }, 100);
+    });
+
+    // Initialize
+    updateSlider(false);
 }
 
 /* ========== FAQ ACCORDION ========== */

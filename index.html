@@ -647,61 +647,128 @@
                     <p class="packing-subtitle">Международный переезд требует упаковки, рассчитанной на перегрузки, досмотры и длительную транспортировку. Мы используем профессиональные упаковочные материалы и методы.</p>
                 </div>
 
-                <div class="cards-grid">
-                    <!-- Карточка 1: Мягкая упаковка -->
-                    <div class="card">
-                        <h3 class="card-title">Мягкая упаковка</h3>
-                        <div class="card-list">
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/dishes.jpg" alt="Бумага">
-                                <p class="card-list-text">Бескислотная упаковочная бумага для искусства и антиквариата</p>
-                            </div>
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/dishes.jpg" alt="Плёнка">
-                                <p class="card-list-text">Пузырчатая плёнка разной плотности для стекла и хрупких предметов</p>
-                            </div>
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/decor.jpg" alt="Пена">
-                                <p class="card-list-text">Пенополиэтилен и поролон для защиты углов и хрупких элементов</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="packing-slider-wrapper">
+                    <button class="packing-arrow packing-arrow--prev" aria-label="Назад">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="packing-arrow packing-arrow--next" aria-label="Вперед">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
 
-                    <!-- Карточка 2: Коробки и тара -->
-                    <div class="card">
-                        <h3 class="card-title">Коробки и тара</h3>
-                        <div class="card-list">
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/decor.jpg" alt="Гофрокоробки">
-                                <p class="card-list-text">5-слойные гофрокоробки для личных вещей, книг, посуды и техники</p>
+                    <div class="packing-slider" id="packing-slider">
+                        <div class="packing-track">
+                            <!-- Карточка 1: Мягкая упаковка -->
+                            <div class="packing-card">
+                                <h3 class="packing-card__title">Мягкая упаковка</h3>
+                                <div class="packing-card__list">
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/dishes.jpg" alt="Бумага">
+                                        <p class="packing-card__text">Бескислотная упаковочная бумага для искусства и антиквариата</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/dishes.jpg" alt="Плёнка">
+                                        <p class="packing-card__text">Пузырчатая плёнка разной плотности для стекла и хрупких предметов</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/decor.jpg" alt="Пена">
+                                        <p class="packing-card__text">Пенополиэтилен и поролон для защиты углов и хрупких элементов</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/decor.jpg" alt="Гардероб">
-                                <p class="card-list-text">Гардеробные коробки с вешалками для костюмов и верхней одежды</p>
-                            </div>
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/decor.jpg" 
-                                alt="Ящики">
-                                <p class="card-list-text">Фанерные ящики индивидуальных размеров для негабаритных предметов</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Карточка 3: Специальная защита -->
-                    <div class="card">
-                        <h3 class="card-title">Специальная защита</h3>
-                        <div class="card-list">
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/decor.jpg" alt="Климат-ящики">
-                                <p class="card-list-text">Климатические ящики для предметов искусства и музейных экспонатов</p>
+                            <!-- Карточка 2: Коробки и тара -->
+                            <div class="packing-card">
+                                <h3 class="packing-card__title">Коробки и тара</h3>
+                                <div class="packing-card__list">
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/decor.jpg" alt="Гофрокоробки">
+                                        <p class="packing-card__text">5-слойные гофрокоробки для личных вещей, книг, посуды и техники</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/decor.jpg" alt="Гардероб">
+                                        <p class="packing-card__text">Гардеробные коробки с вешалками для костюмов и верхней одежды</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/decor.jpg" alt="Ящики">
+                                        <p class="packing-card__text">Фанерные ящики индивидуальных размеров для негабаритных предметов</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/decor.jpg" alt="Обрешётка">
-                                <p class="card-list-text">Деревянная обрешётка и паллетирование для защиты крупной мебели</p>
+
+                            <!-- Карточка 3: Специальная защита -->
+                            <div class="packing-card">
+                                <h3 class="packing-card__title">Специальная защита</h3>
+                                <div class="packing-card__list">
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/decor.jpg" alt="Климат-ящики">
+                                        <p class="packing-card__text">Климатические ящики для предметов искусства и музейных экспонатов</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/decor.jpg" alt="Обрешётка">
+                                        <p class="packing-card__text">Деревянная обрешётка и паллетирование для защиты крупной мебели</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/decor.jpg" alt="Маркировка">
+                                        <p class="packing-card__text">Влагопоглотители silica gel и маркировка FRAGILE / THIS SIDE UP</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-list-item">
-                                <img class="card-list-icon" src="/assets/cargo/decor.jpg" alt="Маркировка">
-                                <p class="card-list-text">Влагопоглотители silica gel и маркировка FRAGILE / THIS SIDE UP</p>
+
+                            <!-- Карточка 4: Одежда и текстиль -->
+                            <div class="packing-card">
+                                <h3 class="packing-card__title">Одежда и текстиль</h3>
+                                <div class="packing-card__list">
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/clothes.jpg" alt="Чехлы">
+                                        <p class="packing-card__text">Тканевые чехлы для костюмов, шуб и деликатной одежды</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/clothes.jpg" alt="Вакуум">
+                                        <p class="packing-card__text">Вакуумные пакеты для объёмных вещей — пуховики, одеяла, подушки</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/clothes.jpg" alt="Обувь">
+                                        <p class="packing-card__text">Индивидуальная упаковка обуви с формодержателями</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Карточка 5: Техника и электроника -->
+                            <div class="packing-card">
+                                <h3 class="packing-card__title">Техника и электроника</h3>
+                                <div class="packing-card__list">
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/appliances.jpg" alt="Антистатик">
+                                        <p class="packing-card__text">Антистатическая плёнка для защиты электроники от статического электричества</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/appliances.jpg" alt="Коробки">
+                                        <p class="packing-card__text">Оригинальные коробки или специальная тара для бытовой техники</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/appliances.jpg" alt="Фиксация">
+                                        <p class="packing-card__text">Пенопластовые вставки и фиксаторы для надёжного крепления</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Карточка 6: Хрупкие предметы -->
+                            <div class="packing-card">
+                                <h3 class="packing-card__title">Хрупкие предметы</h3>
+                                <div class="packing-card__list">
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/dishes.jpg" alt="Посуда">
+                                        <p class="packing-card__text">Многослойная упаковка посуды — бумага, плёнка, ячеистые разделители</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/art.jpg" alt="Картины">
+                                        <p class="packing-card__text">Картонные уголки и телескопические короба для картин и зеркал</p>
+                                    </div>
+                                    <div class="packing-card__item">
+                                        <img class="packing-card__icon" src="/assets/cargo/collections.jpg" alt="Статуэтки">
+                                        <p class="packing-card__text">Индивидуальные ложементы из пены для статуэток и декора</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
