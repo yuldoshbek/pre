@@ -3126,20 +3126,20 @@ p {
 /* Pricing Layout Grid */
 .pricing-layout {
     display: grid;
-    grid-template-columns: 280px repeat(4, 1fr);
-    gap: 28px;
+    grid-template-columns: 220px repeat(4, 1fr);
+    gap: 16px;
 }
 
 /* Features Column (left labels) */
 .features-column {
-    padding: 32px 16px 32px 0;
+    padding: 24px 12px 24px 0;
     display: flex;
     flex-direction: column;
 }
 
 .features-header {
-    min-height: 56px;
-    margin-bottom: 32px;
+    min-height: 44px;
+    margin-bottom: 20px;
 }
 
 .features-list {
@@ -3153,13 +3153,13 @@ p {
 
 .features-list-item {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    line-height: 22px;
+    line-height: 20px;
     color: #1D2939;
     letter-spacing: 0.02em;
     text-transform: none;
-    min-height: 76px;
+    min-height: 56px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #E5E7EB;
@@ -3173,9 +3173,9 @@ p {
 .plan-card {
     background: #F9FAFB;
     border: 1px solid #EAECF0;
-    border-radius: 20px;
-    padding: 32px 28px;
-    min-height: 620px;
+    border-radius: 16px;
+    padding: 24px 20px;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
@@ -3208,16 +3208,16 @@ p {
 .plan-header {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 /* Plan Icon */
 .plan-icon {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
     background: #E8F4FE;
-    border-radius: 14px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3226,8 +3226,8 @@ p {
 }
 
 .plan-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
 }
 
 .plan-card--dark .plan-icon {
@@ -3238,9 +3238,9 @@ p {
 /* Plan Title */
 .plan-title {
     font-family: var(--font-family);
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
-    line-height: 30px;
+    line-height: 24px;
     color: #101828;
     margin: 0;
 }
@@ -3259,8 +3259,8 @@ p {
 .plan-feature {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    min-height: 76px;
+    gap: 2px;
+    min-height: 56px;
     justify-content: center;
     border-bottom: 1px solid #E5E7EB;
 }
@@ -3276,25 +3276,25 @@ p {
 /* Feature Label */
 .feature-label {
     font-family: var(--font-family);
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
-    line-height: 16px;
+    line-height: 14px;
     color: #667085;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     display: none;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 /* Feature Value */
 .feature-value {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
-    line-height: 26px;
+    line-height: 20px;
     color: #1D2939;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
