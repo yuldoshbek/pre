@@ -105,7 +105,8 @@ button {
     background: none;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -119,7 +120,12 @@ textarea:focus-visible {
 }
 
 /* ========== TYPOGRAPHY ========== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.5px;
@@ -144,19 +150,34 @@ p {
 }
 
 @media (min-width: 768px) {
-    h1 { font-size: 40px; }
-    h2 { font-size: 32px; }
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
 }
 
 @media (min-width: 1280px) {
-    h1 { font-size: 50px; }
-    h2 { font-size: 40px; }
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
 }
 
 /* ========== ANIMATIONS ========== */
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInUp {
@@ -164,6 +185,7 @@ p {
         opacity: 0;
         transform: translateY(8px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -175,6 +197,7 @@ p {
         opacity: 0;
         transform: translateY(-16px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -186,6 +209,7 @@ p {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -193,23 +217,35 @@ p {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 @keyframes ping {
-    75%, 100% {
+
+    75%,
+    100% {
         transform: scale(2);
         opacity: 0;
     }
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -1936,6 +1972,7 @@ p {
    RESPONSIVE: DESKTOP (≥1200px)
    ============================================ */
 @media (min-width: 1200px) {
+
     .cards-grid--variant-a,
     .cards-grid--variant-b {
         grid-template-columns: repeat(3, 1fr);
@@ -2990,11 +3027,8 @@ p {
 
 /* Card Image (Icon) */
 .transport-types .card-image {
-    width: 52px;
-    height: 52px;
-    border: 1px solid #E5E5E5;
-    border-radius: 6px;
-    padding: 6px;
+    width: 64px;
+    height: 64px;
     object-fit: contain;
     flex-shrink: 0;
 }
