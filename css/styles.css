@@ -3162,6 +3162,11 @@ p {
     min-height: 76px;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.features-list-item:last-child {
+    border-bottom: none;
 }
 
 /* Plan Card */
@@ -3257,6 +3262,15 @@ p {
     gap: 4px;
     min-height: 76px;
     justify-content: center;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.plan-feature:last-child {
+    border-bottom: none;
+}
+
+.plan-card--dark .plan-feature {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Feature Label */
