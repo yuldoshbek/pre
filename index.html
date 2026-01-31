@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Международные переезды под ключ. Упаковка, таможня, доставка door-to-door. 20 лет опыта.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://intrelo.com/">
+    <meta property="og:title" content="Intrelo — Международные переезды">
+    <meta property="og:description"
+        content="Международные переезды под ключ. Упаковка, таможня, доставка door-to-door. 20 лет опыта.">
+    <meta property="og:image" content="https://intrelo.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://intrelo.com/">
+    <meta property="twitter:title" content="Intrelo — Международные переезды">
+    <meta property="twitter:description"
+        content="Международные переезды под ключ. Упаковка, таможня, доставка door-to-door. 20 лет опыта.">
+    <meta property="twitter:image" content="https://intrelo.com/assets/og-image.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://intrelo.com/">
+
     <title>Intrelo — Международные переезды</title>
 
     <!-- Google Fonts -->
@@ -104,18 +124,21 @@
         </div>
     </header>
 
+    <div class="breadcrumbs" id="breadcrumbs-container">
+        <!-- Breadcrumbs will be injected here via content-engine.js -->
+    </div>
+
     <main>
         <!-- ========== HERO SECTION ========== -->
         <section class="hero">
             <div class="hero__container">
                 <div class="hero__content">
-                    <h1 class="hero__title">
-                        <span>Перевозка личных вещей</span>
-                        <span>из&nbsp;Германии в&nbsp;Россию</span>
+                    <h1 class="hero__title" id="hero-title">
+                        Международный переезд <span>без границ и таможенных хлопот</span>
                     </h1>
-                    <p class="hero__subtitle">
-                        Door-to-door под ключ. Упаковка, таможня, доставка.<br>
-                        20 лет опыта международных переездов.
+                    <p class="hero__subtitle" id="hero-subtitle">
+                        Организуем профессиональный переезд из Европы и ОАЭ в любую точку мира. Полный цикл: от описи
+                        имущества до разгрузки на новом месте.
                     </p>
 
                     <!-- Mobile Stats -->
@@ -243,73 +266,8 @@
                         этапе</p>
                 </div>
 
-                <div class="process-grid">
-                    <!-- Карточка 1: Подготовка -->
-                    <div class="process-card">
-                        <h3 class="process-card__title">Подготовка к отправке</h3>
-                        <div class="process-card__list">
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/process/consultation-whatsapp.png"
-                                    alt="Консультация">
-                                <p class="process-card__text">Консультация — присылаете фото/видео груза через WhatsApp
-                                    или почту</p>
-                            </div>
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/process/packing.jpg" alt="Упаковка">
-                                <p class="process-card__text">Упаковка на дому — коробки, ящики, такелажники,
-                                    спецматериалы</p>
-                            </div>
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/process/warehouse.jpg" alt="Склад">
-                                <p class="process-card__text">Склад консолидации — паллетирование, взвешивание,
-                                    подготовка к отправке</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Карточка 2: Таможня и перевозка -->
-                    <div class="process-card">
-                        <h3 class="process-card__title">Таможня и перевозка</h3>
-                        <div class="process-card__list">
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/process/export-customs.jpg" alt="Экспорт">
-                                <p class="process-card__text">Экспортная таможня — декларация, документы (AWB,
-                                    коносамент, CMR)</p>
-                            </div>
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/process/transport.jpg" alt="Перевозка">
-                                <p class="process-card__text">Перевозка — автотранспорт, авиафрахт или морской контейнер
-                                </p>
-                            </div>
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/process/import-customs.jpg" alt="Импорт">
-                                <p class="process-card__text">Импортная таможня — растаможка, проверка документов,
-                                    оформление</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Карточка 3: Доставка -->
-                    <div class="process-card">
-                        <h3 class="process-card__title">Доставка и завершение</h3>
-                        <div class="process-card__list">
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/process/delivery.jpg" alt="Доставка">
-                                <p class="process-card__text">Доставка до двери — транспортировка до нового адреса
-                                    клиента</p>
-                            </div>
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/cargo/furniture.jpg" alt="Подъём">
-                                <p class="process-card__text">Подъём на этаж — лифт, лестница или через окно при
-                                    необходимости</p>
-                            </div>
-                            <div class="process-card__item">
-                                <img class="process-card__icon" src="/assets/cargo/decor.jpg" alt="Расстановка">
-                                <p class="process-card__text">Распаковка и расстановка — всё по местам, утилизация
-                                    упаковки</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="process-grid" id="process-grid">
+                    <!-- Dynamic process steps will be loaded here via content-engine.js -->
                 </div>
             </div>
         </section>
@@ -319,70 +277,12 @@
             <div class="cargo__container">
                 <div class="cargo__header">
                     <h2 class="cargo__title">Что перевозим</h2>
-                    <p class="cargo__subtitle">Любые личные вещи с профессиональной упаковкой и страхованием</p>
+                    <p class="cargo__subtitle" id="subtitle-cargo">Любые личные вещи с профессиональной упаковкой и
+                        страхованием</p>
                 </div>
 
-                <div class="cargo__grid">
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/clothes.jpg" alt="Одежда и обувь">
-                        </div>
-                        <h3 class="cargo__item-title">Одежда и обувь</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/dishes.jpg" alt="Посуда и стекло">
-                        </div>
-                        <h3 class="cargo__item-title">Посуда и стекло</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/furniture.jpg" alt="Мебель">
-                        </div>
-                        <h3 class="cargo__item-title">Мебель</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/appliances.jpg" alt="Бытовая техника">
-                        </div>
-                        <h3 class="cargo__item-title">Бытовая техника</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/documents.jpg" alt="Документы">
-                        </div>
-                        <h3 class="cargo__item-title">Документы</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/music.jpg" alt="Музыкальные инструменты">
-                        </div>
-                        <h3 class="cargo__item-title">Музыкальные инструменты</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/art.jpg" alt="Картины и искусство">
-                        </div>
-                        <h3 class="cargo__item-title">Картины и искусство</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/collections.jpg" alt="Коллекции">
-                        </div>
-                        <h3 class="cargo__item-title">Коллекции</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/books.jpg" alt="Книги">
-                        </div>
-                        <h3 class="cargo__item-title">Книги</h3>
-                    </div>
-                    <div class="cargo__item">
-                        <div class="cargo__item-image">
-                            <img src="assets/cargo/decor.jpg" alt="Декор">
-                        </div>
-                        <h3 class="cargo__item-title">Декор</h3>
-                    </div>
+                <div class="cargo__grid" id="cargo-grid">
+                    <!-- Loaded via js/content-engine.js -->
                 </div>
             </div>
         </section>
@@ -799,7 +699,8 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="packing-title">Профессиональная упаковка и инвентаризация</h2>
-                    <p class="packing-subtitle">Международный переезд требует упаковки, рассчитанной на перегрузки,
+                    <p class="packing-subtitle" id="subtitle-packaging">Международный переезд требует упаковки,
+                        рассчитанной на перегрузки,
                         досмотры и длительную транспортировку. Мы используем профессиональные упаковочные материалы и
                         методы.</p>
                 </div>
@@ -966,7 +867,8 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="transport-title">Виды перевозки личных вещей</h2>
-                    <p class="transport-subtitle">Каждый международный переезд уникален. Мы объясняем плюсы и
+                    <p class="transport-subtitle" id="subtitle-transport">Каждый международный переезд уникален. Мы
+                        объясняем плюсы и
                         ограничения каждого варианта и берём на себя ответственность за выбранное решение.</p>
                 </div>
 
@@ -1058,7 +960,8 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="pricing-title">Сравнение видов перевозки</h2>
-                    <p class="pricing-subtitle">Каждый международный переезд уникален. Мы объясняем плюсы и ограничения
+                    <p class="pricing-subtitle" id="subtitle-compare">Каждый международный переезд уникален. Мы
+                        объясняем плюсы и ограничения
                         каждого варианта и берём на себя ответственность за выбранное решение.</p>
                 </div>
 
@@ -1261,136 +1164,8 @@
                     <p class="faq__subtitle">Ответы на самые популярные вопросы о международных переездах</p>
                 </div>
 
-                <div class="faq__accordion">
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>В чем преимущества International Cargo?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Мы лидер рынка в сегменте международных переездов. Полный цикл услуг: упаковка, опись,
-                                грузчики, перевозка от двери до двери, таможенное оформление. Гарантия сохранности 100%
-                                за счёт безупречной упаковки — это критично, так как груз перегружается минимум 4 раза
-                                из-за санкций.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Почему упаковка так важна?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Из-за санкций прямого сообщения между Россией и странами Европы нет. Любой груз
-                                перегружается минимум 4 раза, в том числе 2 раза сотрудниками таможни. Мы используем
-                                5-слойный картон и фанерные ящики для хрупких вещей — это гарантирует 100% сохранность.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Как рассчитать стоимость переезда?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Заполните форму на сайте или позвоните нам. Вместе с ценой мы пришлём фото правильной
-                                упаковки для каждой категории ваших вещей (посуда, мебель, хрупкое, картины и т.д.).
-                                Расчёт бесплатный и ни к чему не обязывает.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Какие сроки доставки?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Авто-доставка в Европу: 10-21 день. Авиа: 3-7 дней. Морская: 30-60 дней. ЖД в Азию: 14-25
-                                дней. Подберём оптимальный способ под ваши сроки и бюджет.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Как отслеживать груз?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>GPS-трекинг в реальном времени. Уведомления на каждом этапе: забор, таможня, в пути,
-                                доставка. 24/7 связь с персональным менеджером через WhatsApp или Telegram.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Что делать если груз повреждён?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Все грузы застрахованы на 100% стоимости. При обнаружении повреждения составляем акт и
-                                компенсируем полную стоимость в течение 14 дней. За всё время работы — ни одного
-                                потерянного груза.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Нужно ли самому упаковывать вещи?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Нет, мы всё делаем сами. Профессиональная упаковка с использованием специальных
-                                материалов. Фото-инвентаризация каждого предмета. Все материалы включены в стоимость.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Как работаете с санкциями?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Используем легальные маршруты через третьи страны. Всё оформление полностью законное.
-                                Груз проходит таможню без задержек благодаря правильной подготовке документов.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Можно ли хранить вещи, если новое жильё не готово?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Да, предоставляем временное хранение на складах с климат-контролем. Охрана 24/7,
-                                видеонаблюдение. Гибкие сроки от 1 дня до нескольких месяцев. Можно хранить до или после
-                                таможни.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question">
-                            <span>Работаете ли с юридическими лицами?</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div class="faq__answer">
-                            <p>Да, второе направление — международные перевозки коммерческих грузов для юридических лиц.
-                                Офисные переезды, оборудование, сборные грузы. Корпоративные условия и отсрочка платежа.
-                            </p>
-                        </div>
-                    </div>
+                <div class="faq__accordion" id="faq-dynamic-container">
+                    <!-- Dynamic FAQ items will be loaded here via content-engine.js -->
                 </div>
             </div>
         </section>
@@ -1587,7 +1362,7 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/content-engine.js"></script>
+    <script src="js/content-engine.js" type="module"></script>
 </body>
 
 </html>
