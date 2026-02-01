@@ -66,6 +66,9 @@ export function updatePageContent(params, citiesDB, routesData) {
 /**
  * Render Breadcrumbs
  */
+/**
+ * Render Breadcrumbs
+ */
 function renderBreadcrumbs(cityFrom, cityTo, language) {
     const bcContainer = document.getElementById('breadcrumbs-container');
     if (!bcContainer) return;
@@ -74,13 +77,16 @@ function renderBreadcrumbs(cityFrom, cityTo, language) {
     const categoryLabel = language === 'ru' ? "Международные переезды" : "International Moving";
     const currentLabel = `${cityFrom[language]} → ${cityTo[language]}`;
 
+    // SEO-friendly URL
+    const routeUrl = `/international-moving/${cityFrom.slug}-${cityTo.slug}`;
+
     bcContainer.innerHTML = `
         <div class="breadcrumbs__container">
             <a href="/" class="breadcrumbs__link">${homeLabel}</a>
             <span class="breadcrumbs__separator">/</span>
             <a href="/international-moving" class="breadcrumbs__link">${categoryLabel}</a>
             <span class="breadcrumbs__separator">/</span>
-            <span class="breadcrumbs__current">${currentLabel}</span>
+            <a href="${routeUrl}" class="breadcrumbs__current" onclick="event.preventDefault();">${currentLabel}</a>
         </div>
     `;
 }
@@ -132,11 +138,29 @@ function renderCustoms(cityFrom, cityTo, language, routeContent) {
     const customs = routeContent.customs;
     customsBlock.innerHTML = `
         <div class="customs-content">
-            <div class="customs-logic-tags">
-                ${customs.logic.map(tag => `<span class="logic-tag">#${tag}</span>`).join('')}
+            <div class="customs-header-row">
+                <div class="customs-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                </div>
+                <div class="customs-logic-tags">
+                    ${customs.logic.map(tag => `<span class="logic-tag">#${tag}</span>`).join('')}
+                </div>
             </div>
             <p class="customs-text">${customs[language]}</p>
-            <div class="customs-meta">Route: ${cityFrom.slug} → ${cityTo.slug}</div>
+            <div class="customs-meta">
+                <span class="meta-item">
+                    <strong>Route:</strong> ${cityFrom.slug} → ${cityTo.slug}
+                </span>
+                <span class="meta-item">
+                    <strong>Status:</strong> Verified 2024-2025
+                </span>
+            </div>
         </div>
     `;
 }
