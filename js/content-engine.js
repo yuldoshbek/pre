@@ -70,8 +70,14 @@ function findCityBySlug(slug) {
 }
 
 function updateUrl(fromCity, toCity) {
-    const cityFromObj = CITIES_DATABASE['Germany'][fromCity] || CITIES_DATABASE['Russia'][fromCity];
-    const cityToObj = CITIES_DATABASE['Germany'][toCity] || CITIES_DATABASE['Russia'][toCity];
+    let cityFromObj = null;
+    let cityToObj = null;
+
+    // Search for city objects dynamically across all countries
+    for (const country in CITIES_DATABASE) {
+        if (CITIES_DATABASE[country][fromCity]) cityFromObj = CITIES_DATABASE[country][fromCity];
+        if (CITIES_DATABASE[country][toCity]) cityToObj = CITIES_DATABASE[country][toCity];
+    }
 
     if (cityFromObj && cityToObj) {
         const url = `/international-moving/${cityFromObj.slug}-${cityToObj.slug}`;

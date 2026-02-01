@@ -4,6 +4,7 @@
  */
 
 import { updateSEO, injectSchemaOrg } from './seo.js';
+import { generateRouteContent } from './routes-generator.js';
 
 /**
  * Main page content updater
@@ -30,11 +31,13 @@ export function updatePageContent(params, citiesDB, routesData) {
     const routeSlug = `${cityFromObj.slug}-${cityToObj.slug}`;
     const countryRouteKey = `${countryFrom}_${countryTo}`;
 
-    // Select correct route data based on direction
-    const routeContent = routesData[countryRouteKey];
+    // Select correct route data based on direction OR generate dynamically
+    let routeContent = routesData[countryRouteKey];
+
     if (!routeContent) {
-        console.warn(`No content found for route: ${countryRouteKey}`);
-        return;
+        // Fallback: Generate dynamic content on the fly
+        console.log(`Generating dynamic content for: ${routeSlug}`);
+        routeContent = generateRouteContent(cityFromObj, cityToObj, language);
     }
 
     // 1. Update SEO
