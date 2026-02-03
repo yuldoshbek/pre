@@ -7,6 +7,7 @@ import { CITIES_DATABASE } from './data/cities.js';
 import { ROUTES_DE_RU } from './data/routes-de-ru.js';
 import { ROUTES_RU_DE } from './data/routes-ru-de.js';
 import { updatePageContent } from './core/engine.js';
+import { initDemoOrchestrator } from './core/demo-helper.js';
 
 // Combine all routes data
 const ALL_ROUTES = {
@@ -69,6 +70,17 @@ function findCityBySlug(slug) {
     return null;
 }
 
+function findCityNameBySlug(slug) {
+    for (const country in CITIES_DATABASE) {
+        for (const cityName in CITIES_DATABASE[country]) {
+            if (CITIES_DATABASE[country][cityName].slug === slug) {
+                return cityName;
+            }
+        }
+    }
+    return null;
+}
+
 function updateUrl(fromCity, toCity) {
     let cityFromObj = null;
     let cityToObj = null;
@@ -96,8 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlState = parseUrl();
     pageParams = { ...pageParams, ...urlState };
 
-    // 2. Create Controls
-    createControlPanel();
+    // 2. Initialize Demo Orchestrator (WOW Factor)
+    initDemoOrchestrator(
+        { from_city_slug: findCityBySlug(pageParams.from_city)?.slug, to_city_slug: findCityBySlug(pageParams.to_city)?.slug },
+        CITIES_DATABASE,
+        (type, value) => {
+            if (type === 'from') {
+                pageParams.from_city = findCityNameBySlug(value);
+                updateUrl(pageParams.from_city, pageParams.to_city);
+            } else if (type === 'to') {
+                pageParams.to_city = findCityNameBySlug(value);
+                updateUrl(pageParams.from_city, pageParams.to_city);
+            } else if (type === 'lang') {
+                pageParams.language = value;
+            }
+            render();
+        }
+    );
 
     // 3. Initial Render
     render();

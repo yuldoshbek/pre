@@ -1,15 +1,16 @@
 /**
  * INTERCARGO - Core Engine
- * Main rendering logic for dynamic content generation
+ * Main rendering logic connecting to Content Platform
  */
 
 import { updateSEO, injectSchemaOrg } from './seo.js';
-import { generateRouteContent } from './routes-generator.js';
+import { getRouteContent } from './content-manager.js';
+import { logToDemo, highlightUpdate } from './demo-helper.js';
 
 /**
  * Main page content updater
  */
-export function updatePageContent(params, citiesDB, routesData) {
+export async function updatePageContent(params, citiesDB, routesData) {
     const { from_city, to_city, language } = params;
 
     // Find city objects
@@ -31,44 +32,72 @@ export function updatePageContent(params, citiesDB, routesData) {
     const routeSlug = `${cityFromObj.slug}-${cityToObj.slug}`;
     const countryRouteKey = `${countryFrom}_${countryTo}`;
 
-    // Select correct route data based on direction OR generate dynamically
-    let routeContent = routesData[countryRouteKey];
+    // === CONTENT PLATFORM INTEGRATION ===
+    // 1. Get Content (Check Store -> Generate if missing -> Return)
+    logToDemo(`Checking Content Store for route: ${cityFromObj.slug} → ${cityToObj.slug}...`, 'sys');
+    const routeContent = await getRouteContent(cityFromObj, cityToObj, language);
+    logToDemo(`SUCCESS: Found optimized content in Store. Status: Active.`, 'hit');
 
-    if (!routeContent) {
-        // Fallback: Generate dynamic content on the fly
-        console.log(`Generating dynamic content for: ${routeSlug}`);
-        routeContent = generateRouteContent(cityFromObj, cityToObj, language);
-    }
+    // Map the structured content back to what the render functions expect
+    // This adapter layer ensures we don't need to rewrite all render functions yet
+    const adapterContent = {
+        hero: {
+            subtitle: routeContent.blocks.hero.subtitle,
+            en_subtitle: routeContent.blocks.hero.subtitle // Fallback
+        },
+        customs: {
+            ru: routeContent.blocks.customs.text,
+            en: routeContent.blocks.customs.text, // Scaling needed for EN later
+            logic: routeContent.blocks.customs.tags
+        },
+        // Keep static fallbacks for sections not yet in Content Store
+        faq: [],
+        process: [],
+        cargo: { items: [] }
+    };
 
-    // 1. Update SEO
-    updateSEO(cityFromObj, cityToObj, language);
+    // For now, mix in the static data for non-migrated blocks
+    // In full version, ALL blocks would come from routeContent
+    const legacyContent = routesData[countryRouteKey] || {};
+    const finalContent = { ...legacyContent, ...adapterContent };
+
+    // 2. Update SEO
+    // Allow SEO title override from Store
+    if (routeContent.seo.title) document.title = routeContent.seo.title;
+    updateSEO(cityFromObj, cityToObj, language); // Legacy SEO updater
     injectSchemaOrg(cityFromObj, cityToObj, language);
 
-    // 2. Update Breadcrumbs
+    // 3. Update Breadcrumbs
     renderBreadcrumbs(cityFromObj, cityToObj, language);
 
-    // 3. Update Hero
-    renderHero(cityFromObj, cityToObj, language, routeContent, routeSlug);
+    // 4. Update Hero
+    // Pass the store content specifically
+    renderHero(cityFromObj, cityToObj, language, finalContent, routeSlug);
 
-    // 4. Update Subtitles
-    renderSubtitles(language, routeContent, countryRouteKey);
+    // 5. Update Subtitles
+    renderSubtitles(language, finalContent, countryRouteKey);
 
-    // 5. Update Customs
-    renderCustoms(cityFromObj, cityToObj, language, routeContent);
+    // 6. Update Customs
+    renderCustoms(cityFromObj, cityToObj, language, finalContent);
 
-    // 6. Update FAQ
-    renderFAQ(language, routeContent);
+    // 7. Update FAQ
+    renderFAQ(language, finalContent);
 
-    // 7. Update Cargo Cards
-    renderCargo(language, routeContent, routeSlug);
+    // 8. Update Cargo Cards
+    renderCargo(language, finalContent, routeSlug);
 
-    // 8. Update Process
-    renderProcess(language, routeContent);
+    // 9. Update Process
+    renderProcess(language, finalContent);
+
+    // ✨ PILOT: Update New Blocks
+    renderTimelines(routeContent);
+    renderInternalLinks(routeContent);
+
+    // ✨ WOW: Flash updated zones
+    ['hero-subtitle', 'customs-dynamic-content', 'timelines-block-target'].forEach(id => highlightUpdate(id));
+    logToDemo(`UI Synchronization complete. ${Object.keys(routeContent.blocks).length} blocks updated.`, 'sys');
 }
 
-/**
- * Render Breadcrumbs
- */
 /**
  * Render Breadcrumbs
  */
@@ -228,4 +257,38 @@ function renderProcess(language, routeContent) {
             <p class="process-card__text">${language === 'ru' ? step.desc : step.en_desc}</p>
         </div>
     `).join('');
+}
+
+/**
+ * ✨ PILOT: Render Timelines
+ */
+function renderTimelines(routeContent) {
+    const section = document.getElementById('timelines-section');
+    const target = document.getElementById('timelines-block-target');
+
+    if (!section || !target) return;
+
+    if (routeContent.blocks.timelines) {
+        section.classList.remove('hidden');
+        target.innerHTML = `<p>${routeContent.blocks.timelines.text}</p>`;
+    } else {
+        section.classList.add('hidden');
+    }
+}
+
+/**
+ * ✨ PILOT: Render Internal Links
+ */
+function renderInternalLinks(routeContent) {
+    const section = document.getElementById('links-section');
+    const target = document.getElementById('internal-links-target');
+
+    if (!section || !target) return;
+
+    if (routeContent.blocks.internal_links) {
+        section.classList.remove('hidden');
+        target.innerHTML = `<p>${routeContent.blocks.internal_links.text}</p>`;
+    } else {
+        section.classList.add('hidden');
+    }
 }

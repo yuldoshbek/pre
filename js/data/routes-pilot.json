@@ -1,0 +1,472 @@
+{
+  "routes": [
+    {
+      "route_id": "germany-france-export",
+      "from": "germany",
+      "to": "france",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-spain-export",
+      "from": "germany",
+      "to": "spain",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-italy-export",
+      "from": "germany",
+      "to": "italy",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-portugal-export",
+      "from": "germany",
+      "to": "portugal",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-netherlands-export",
+      "from": "germany",
+      "to": "netherlands",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-belgium-export",
+      "from": "germany",
+      "to": "belgium",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-austria-export",
+      "from": "germany",
+      "to": "austria",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-poland-export",
+      "from": "germany",
+      "to": "poland",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-czech-export",
+      "from": "germany",
+      "to": "czech",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-hungary-export",
+      "from": "germany",
+      "to": "hungary",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-slovakia-export",
+      "from": "germany",
+      "to": "slovakia",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-slovenia-export",
+      "from": "germany",
+      "to": "slovenia",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-croatia-export",
+      "from": "germany",
+      "to": "croatia",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-greece-export",
+      "from": "germany",
+      "to": "greece",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-bulgaria-export",
+      "from": "germany",
+      "to": "bulgaria",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-romania-export",
+      "from": "germany",
+      "to": "romania",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-sweden-export",
+      "from": "germany",
+      "to": "sweden",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-denmark-export",
+      "from": "germany",
+      "to": "denmark",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-finland-export",
+      "from": "germany",
+      "to": "finland",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-estonia-export",
+      "from": "germany",
+      "to": "estonia",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-latvia-export",
+      "from": "germany",
+      "to": "latvia",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-lithuania-export",
+      "from": "germany",
+      "to": "lithuania",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-ireland-export",
+      "from": "germany",
+      "to": "ireland",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-uk-export",
+      "from": "germany",
+      "to": "uk",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-switzerland-export",
+      "from": "germany",
+      "to": "switzerland",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-serbia-export",
+      "from": "germany",
+      "to": "serbia",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-montenegro-export",
+      "from": "germany",
+      "to": "montenegro",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-albania-export",
+      "from": "germany",
+      "to": "albania",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-macedonia-export",
+      "from": "germany",
+      "to": "macedonia",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-luxembourg-export",
+      "from": "germany",
+      "to": "luxembourg",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-monaco-export",
+      "from": "germany",
+      "to": "monaco",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-liechtenstein-export",
+      "from": "germany",
+      "to": "liechtenstein",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-norway-export",
+      "from": "germany",
+      "to": "norway",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-iceland-export",
+      "from": "germany",
+      "to": "iceland",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-malta-export",
+      "from": "germany",
+      "to": "malta",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-cyprus-export",
+      "from": "germany",
+      "to": "cyprus",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-andorra-export",
+      "from": "germany",
+      "to": "andorra",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-san_marino-export",
+      "from": "germany",
+      "to": "san_marino",
+      "direction": "export"
+    },
+    {
+      "route_id": "germany-bosnia-export",
+      "from": "germany",
+      "to": "bosnia",
+      "direction": "export"
+    },
+    {
+      "route_id": "france-germany-import",
+      "from": "france",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "spain-germany-import",
+      "from": "spain",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "italy-germany-import",
+      "from": "italy",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "portugal-germany-import",
+      "from": "portugal",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "netherlands-germany-import",
+      "from": "netherlands",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "belgium-germany-import",
+      "from": "belgium",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "austria-germany-import",
+      "from": "austria",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "poland-germany-import",
+      "from": "poland",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "czech-germany-import",
+      "from": "czech",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "hungary-germany-import",
+      "from": "hungary",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "slovakia-germany-import",
+      "from": "slovakia",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "slovenia-germany-import",
+      "from": "slovenia",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "croatia-germany-import",
+      "from": "croatia",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "greece-germany-import",
+      "from": "greece",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "bulgaria-germany-import",
+      "from": "bulgaria",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "romania-germany-import",
+      "from": "romania",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "sweden-germany-import",
+      "from": "sweden",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "denmark-germany-import",
+      "from": "denmark",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "finland-germany-import",
+      "from": "finland",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "estonia-germany-import",
+      "from": "estonia",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "latvia-germany-import",
+      "from": "latvia",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "lithuania-germany-import",
+      "from": "lithuania",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "ireland-germany-import",
+      "from": "ireland",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "uk-germany-import",
+      "from": "uk",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "switzerland-germany-import",
+      "from": "switzerland",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "serbia-germany-import",
+      "from": "serbia",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "montenegro-germany-import",
+      "from": "montenegro",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "albania-germany-import",
+      "from": "albania",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "macedonia-germany-import",
+      "from": "macedonia",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "luxembourg-germany-import",
+      "from": "luxembourg",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "monaco-germany-import",
+      "from": "monaco",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "liechtenstein-germany-import",
+      "from": "liechtenstein",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "norway-germany-import",
+      "from": "norway",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "iceland-germany-import",
+      "from": "iceland",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "malta-germany-import",
+      "from": "malta",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "cyprus-germany-import",
+      "from": "cyprus",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "andorra-germany-import",
+      "from": "andorra",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "san_marino-germany-import",
+      "from": "san_marino",
+      "to": "germany",
+      "direction": "import"
+    },
+    {
+      "route_id": "bosnia-germany-import",
+      "from": "bosnia",
+      "to": "germany",
+      "direction": "import"
+    }
+  ]
+}
